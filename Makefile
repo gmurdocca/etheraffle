@@ -8,3 +8,6 @@ help:
 
 test:
 	truffle test --network ropsten
+
+deploy:
+	truffle migrate --network ropsten

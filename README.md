@@ -10,6 +10,7 @@ Raffle DApp on Ethereum
 - Copy `.secrets.json.example` to `.secrets.json`, set `project_id` and `mnemonic` values from above steps
 - Add some fake ETH funds to your test wallet via [https://faucet.metamask.io/]
 - Run `make test`
+- Deploy the contract to Ropsten network: `make deploy`
 
 Note: If you already use MetaMask, consider installing a separate browser, eg. IceCat (Firefox fork), and installing the MetaMask addon on that.
 
