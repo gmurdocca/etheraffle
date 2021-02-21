@@ -1,5 +1,13 @@
-.secrets.json
+# Truffle
 contracts/.placeholder
 test/.placeholder
 build
+
+# Node.JS modules dir
 node_modules
+
+# Project config file
+.secrets.json
+
+# local deploy log file
+deploy.log

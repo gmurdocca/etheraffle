@@ -3,11 +3,19 @@ SRC_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 .PHONY: test
 
 help:
-	echo "  help        This help"
-	echo "  test        Run JavaScript and Solidity tests"
+	echo "  help        	This help"
+	echo "  test        	Run JavaScript and Solidity tests"
+	echo "  deps        	Install dependencies into node_modules/"
+	echo "  deploy      	Deploy Contracts to Ethereum. Add ARGS=\"--reset\" to deploy from the beginning (first migration)"
+
+deps:
+	which npm >/dev/null 2>&1 || (echo "Please install Node.js" && exit 1)
+	npm install package-json	
 
 test:
-	truffle test --network ropsten
+	$$(npm bin)/truffle test --network ropsten
 
 deploy:
-	truffle migrate --network ropsten
+	echo "$$(date) - Starting Deployment" >> deploy.log
+	$$(npm bin)/truffle migrate $(ARGS) --network ropsten 2>&1 | tee -a deploy.log
+	echo "Wrote logs to ./deploy.log"

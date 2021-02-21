@@ -1,0 +1,26 @@
+{
+  "name": "etheraffle",
+  "version": "1.0.0",
+  "description": "Raffle Dapp on Ethereum",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gmurdocca/etheraffle.git"
+  },
+  "author": "George Murdocca",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/gmurdocca/etheraffle/issues"
+  },
+  "homepage": "https://github.com/gmurdocca/etheraffle#readme",
+  "dependencies": {
+    "package-json": "^6.5.0",
+    "truffle": "^5.1.67"
+  }
+}

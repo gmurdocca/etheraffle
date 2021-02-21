@@ -3,6 +3,10 @@ pragma solidity ^0.6.0;
 
 // Our first contract is a faucet!
 contract Faucet {
+
+    // fallback function
+    fallback () external payable {}
+
     // Accept any incoming amount
     receive () external payable {}
     
