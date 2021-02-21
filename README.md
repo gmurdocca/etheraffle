@@ -9,3 +9,6 @@ Raffle DApp on Ethereum
 - Install MetaMask browser plugin, select Ropsten network, create a wallet, grab mnemonic value from Settings -> Security and Privacy -> Reveal Seed Phrase
 - Copy `.secrets.json.example` to `.secrets.json`, set `project_id` and `mnemonic` values from above steps
 - Run `make test`
+
+Note: If you already use MetaMask, consider installing a separate browser, eg. IceCat (Firefox clone), and installing Metamask there, separate to your main browser.
+
