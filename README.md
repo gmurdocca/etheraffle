@@ -4,7 +4,8 @@ Raffle DApp on Ethereum
 
 ## Setup
 
-- Install Truffle at [https://www.trufflesuite.com/truffle]
+- Install Node.JS on your system
+- run `make deps`
 - Create an Infura account at [https://infura.io], Create an Ethereum project, set endpoint to `Ropsten`, note the `PROJECT ID`
 - Install MetaMask browser plugin, select Ropsten network, grab mnemonic value from Settings -> Security and Privacy -> Reveal Seed Phrase
 - Copy `.secrets.json.example` to `.secrets.json`, set `project_id` and `mnemonic` values from above steps
@@ -12,5 +13,7 @@ Raffle DApp on Ethereum
 - Run `make test`
 - Deploy the contract to Ropsten network: `make deploy`
 
-Note: If you already use MetaMask, consider installing a separate browser, eg. IceCat (Firefox fork), and installing the MetaMask addon on that.
+Notes:
+- If you already use MetaMask, consider installing a separate browser, eg. IceCat (Firefox fork), and installing the MetaMask addon on that.
+- If you want to re-deploy the Contract, run `make deploy ARGS="--reset"`
 
