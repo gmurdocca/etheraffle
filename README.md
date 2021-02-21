@@ -11,5 +11,5 @@ Raffle DApp on Ethereum
 - Add some fake ETH funds to your test wallet via [https://faucet.metamask.io/]
 - Run `make test`
 
-Note: If you already use MetaMask, consider installing a separate browser, eg. IceCat (Firefox clone), and installing Metamask there, separate to your main browser.
+Note: If you already use MetaMask, consider installing a separate browser, eg. IceCat (Firefox fork), and installing the Metamask addon on that.
 
