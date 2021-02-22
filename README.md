@@ -4,7 +4,7 @@ Raffle DApp on Ethereum
 
 ## Setup
 
-- Install Node.JS on your system
+- Install Node.js on your system
 - run `make deps`
 - Create an Infura account at [https://infura.io], Create an Ethereum project, set endpoint to `Ropsten`, note the `PROJECT ID`
 - Install MetaMask browser plugin, select Ropsten network, grab mnemonic value from Settings -> Security and Privacy -> Reveal Seed Phrase
@@ -16,4 +16,3 @@ Raffle DApp on Ethereum
 Notes:
 - If you already use MetaMask, consider installing a separate browser, eg. IceCat (Firefox fork), and installing the MetaMask addon on that.
 - If you want to re-deploy the Contract, run `make deploy ARGS="--reset"`
-
