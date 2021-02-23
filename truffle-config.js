@@ -73,6 +73,12 @@ module.exports = {
     // production: true    // Treats this network as if it was a public net. (default: false)
     // }
 
+    ganache: {
+      host: "localhost",
+      port: 7545,
+      network_id: "5777"
+    },
+
     ropsten: {
       provider: () => new HDWalletProvider(config.mnemonic, `https://ropsten.infura.io/v3/${config.project_id}`),
       network_id: 3,          // Ropsten's id
@@ -102,7 +108,7 @@ module.exports = {
       //  evmVersion: "byzantium"
       // }
 
-      version: "0.4.22",    // Fetch exact version from solc-bin (default: truffle's version)
+      version: "0.6.12",    // Fetch exact version from solc-bin (default: truffle's version)
     }
   }
 };

@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/gmurdocca/etheraffle#readme",
   "dependencies": {
+    "@openzeppelin/contracts": "^3.4.0",
     "package-json": "^6.5.0",
     "truffle": "^5.1.67"
   }

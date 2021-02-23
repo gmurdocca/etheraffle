@@ -1,42 +1,26 @@
-pragma solidity ^0.4.22;
+// SPDX-License-Identifier: agpl-3.0
+pragma solidity ^0.6.12;
 
-contract owned {
-	address owner;
-	// Contract constructor: set owner
-	constructor() {
-		owner = msg.sender;
-	}
-	// Access control modifier
-	modifier onlyOwner {
-		require(msg.sender == owner,
-		        "Only the contract owner can call this function");
-		_;
-	}
+import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
+
+contract Etheraffle is Ownable {
+
+    event DepositReceived(address user, uint amount);
+
+    mapping (address => uint256) public deposits;
+
+    function processDeposit(address user) external payable {
+        deposits[user] += msg.value;
+    }
+
+    function destroy() public onlyOwner {
+        selfdestruct(payable(this.owner()));
+    }
+
+    receive() external payable {
+        emit DepositReceived(msg.sender, msg.value);
+        //processDeposit{value:msg.value}(msg.sender);
+    }
+
 }
 
-contract mortal is owned {
-	// Contract destructor
-	function destroy() public onlyOwner {
-		selfdestruct(owner);
-	}
-}
-
-contract Faucet is mortal {
-	event Withdrawal(address indexed to, uint amount);
-	event Deposit(address indexed from, uint amount);
-
-	// Give out ether to anyone who asks
-	function withdraw(uint withdraw_amount) public {
-		// Limit withdrawal amount
-		require(withdraw_amount <= 0.1 ether);
-		require(this.balance >= withdraw_amount,
-			"Insufficient balance in faucet for withdrawal request");
-		// Send the amount to the address that requested it
-		msg.sender.transfer(withdraw_amount);
-		emit Withdrawal(msg.sender, withdraw_amount);
-	}
-	// Accept any incoming amount
-	function () external payable {
-		emit Deposit(msg.sender, msg.value);
-	}
-}
