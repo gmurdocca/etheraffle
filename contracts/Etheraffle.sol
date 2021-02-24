@@ -17,7 +17,7 @@ contract Etheraffle is Ownable {
         selfdestruct(payable(this.owner()));
     }
 
-    function processDeposit(address user) private {
+    function process_deposit(address user) private {
         deposits[user] += msg.value;
     }
 
@@ -25,7 +25,7 @@ contract Etheraffle is Ownable {
         require(block.timestamp < draw_date, "Sorry, this raffle is not accepting any more deposits.");
         // ensure user does not exceed max deposit
         require(msg.value <= max_deposit - deposits[msg.sender], "Deposit would exceed the maximum deposit limit."); //XXX tell them what the limit is
-        processDeposit(msg.sender);
+        process_deposit(msg.sender);
         emit Deposit(msg.sender, msg.value);
     }
 
